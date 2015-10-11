@@ -1,0 +1,1 @@
+module.exports = require("npm:@cycle/dom@5.3.1/lib/cycle-dom");

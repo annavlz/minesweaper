@@ -1,0 +1,1 @@
+module.exports = require("npm:es6-map@0.1.1/index");

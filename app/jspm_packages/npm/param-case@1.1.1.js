@@ -1,0 +1,1 @@
+module.exports = require("npm:param-case@1.1.1/param-case");

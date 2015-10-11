@@ -1,0 +1,1 @@
+module.exports = require("npm:x-is-array@0.1.0/index");

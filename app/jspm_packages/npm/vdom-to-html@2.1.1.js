@@ -1,0 +1,1 @@
+module.exports = require("npm:vdom-to-html@2.1.1/index");

@@ -1,0 +1,1 @@
+module.exports = require("npm:@cycle/core@3.1.0/lib/cycle");

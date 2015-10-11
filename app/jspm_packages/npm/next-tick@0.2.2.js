@@ -1,0 +1,1 @@
+module.exports = require("npm:next-tick@0.2.2/index");

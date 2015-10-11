@@ -1,0 +1,1 @@
+module.exports = require("npm:x-is-string@0.1.0/index");
