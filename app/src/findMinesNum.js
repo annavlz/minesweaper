@@ -1,3 +1,4 @@
+
 const neighbourPositions = [
   {x: -1, y: -1},
   {x: 0, y: -1},
@@ -10,15 +11,10 @@ const neighbourPositions = [
 ]
 
 function isNeighbour (checkCell, mainCell) {
-  console.log('positions before', neighbourPositions)
-  let checkCellNeighbours = neighbourPositions.forEach(cell => {
-
-    console.log('cell position', cell);
-
-    cell.x = cell.x + checkCell.x
-    console.log('cellX', cell.x);
-    cell.y = cell.y + checkCell.y
-    console.log('cellY', cell.y);
+  let checkCellNeighbours = JSON.parse(JSON.stringify(neighbourPositions))
+    .map(cell => {
+    cell.x = cell.x + checkCell.posX
+    cell.y = cell.x + checkCell.posY
     return cell
   })
 
@@ -26,7 +22,7 @@ function isNeighbour (checkCell, mainCell) {
   console.log('positions after', neighbourPositions);
 
   let thereIsNeighbour = checkCellNeighbours.find(cell => {
-    cell.x === mainCell.x && cell.y === mainCell.y
+    cell.x === mainCell.posX && cell.y === mainCell.posY
   })
 
   console.log('thereIsNeighbour', thereIsNeighbour);
