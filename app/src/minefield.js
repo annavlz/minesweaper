@@ -1,17 +1,11 @@
+import findMinesNum from './findMinesNum'
+
 function random (max) {
   return Math.floor(Math.random() * max)
 }
 
-function findNeighbours(position, board) {
-  let neighbours = board.filter(cell => {
-    neighbours(position, cell)
-  })
-  return neighbours
-}
-
 function makeBoardString (size) {
   return new Array(size*size)
-  // return Array.apply(null, Array(size*size)).map(()=>{return 0})
 }
 
 function setMines (boardString) {
@@ -26,45 +20,45 @@ function setMines (boardString) {
       mineCount++
     }
   }
-
   return boardStringWithMines
 }
 
 function makeBoardWithMines (stringWithMines) {
-  console.log('mines', stringWithMines);
   let boardWithMines = []
   let size = Math.sqrt(stringWithMines.length)
   let count = 0
   for(let y = 0; y < size; y++){
-    let row = []
     for(let x = 0; x < size; x++) {
       if(stringWithMines[count]) {
-        row.push({val: 9, posX: x, posY: y})
+        boardWithMines.push({val: 9, posX: x, posY: y})
       }else{
-        row.push({val: 0, posX: x, posY: y})
+        boardWithMines.push({val: 0, posX: x, posY: y})
       }
       count++
     }
-    boardWithMines.push(row)
   }
   return boardWithMines
 }
 
 function getNumbers (boardWithMines) {
   let board = boardWithMines.map(cell => {
-    findNeighbours(cell, boardWithMines)
+    if(cell.val === 9) {
+      console.log('mine');
+      return cell
+    }else{
+      console.log('sending cell', cell);
+      cell.val = findMinesNum(cell, boardWithMines)
+      // console.log("mines num", findMinesNum(cell, boardWithMines))
+
+      return cell
+    }
   })
-
-
   return board
 }
 
 
-
-
-
 function minefield (size) {
-  return makeBoardWithMines(setMines(makeBoardString(size)))
+  return getNumbers(makeBoardWithMines(setMines(makeBoardString(size))))
 }
 export default minefield
 
