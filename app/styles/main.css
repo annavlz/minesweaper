@@ -1,0 +1,47 @@
+.outer-board {
+  margin-top: 50px;
+  margin-left: 150px;
+  width: 288px;
+  height: 340px;
+  background-color: #DCE0E5;
+  border: 1px solid #8a8f96;
+}
+
+.outer-board-border {
+  margin-top: 10px;
+  margin-left: 10px;
+  width: 267px;
+  height: 320px;
+  background-color: #DCE0E5;
+  border: 1px solid #8a8f96;
+  float: left;
+}
+
+.field-border {
+  margin-top: 55px;
+  margin-left: 5px;
+  width: 256px;
+  height: 256px;
+  background-color: #DCE0E5;
+  border: 1px solid #8a8f96;
+}
+
+.cell {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #8a8f96;
+  float: left;
+  visibility: visible;
+}
+
+#mines-number {
+  float: left;
+  margin-left: 5px;
+  margin-top: 5px
+}
+
+.new-game {
+  float: right;
+  margin-right: 5px;
+  margin-top: 5px
+}

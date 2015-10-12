@@ -43,23 +43,17 @@ function makeBoardWithMines (stringWithMines) {
 function getNumbers (boardWithMines) {
   let board = boardWithMines.map(cell => {
     if(cell.val === 9) {
-      console.log('mine');
       return cell
     }else{
-      console.log('sending cell', cell);
       cell.val = findMinesNum(cell, boardWithMines)
-      // console.log("mines num", findMinesNum(cell, boardWithMines))
-
       return cell
     }
   })
   return board
 }
 
-
 function minefield (size) {
   return getNumbers(makeBoardWithMines(setMines(makeBoardString(size))))
 }
+
 export default minefield
-
-

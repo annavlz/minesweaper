@@ -14,6 +14,6 @@ import minefield from './src/minefield'
 // });
 
 
-minefield(3)
+console.log(minefield(8))
 // console.log('test');
 
