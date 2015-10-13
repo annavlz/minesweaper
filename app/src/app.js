@@ -11,7 +11,7 @@ function intent(DOM) {
 function model(actions) {
   console.log('model')
   const word$ = actions.map(ev => {
-    console.log("click")
+    console.log("click", ev.srcElement.id)
     return ev
     })
   return word$
@@ -20,7 +20,7 @@ function model(actions) {
 function view(items) {
   console.log("view")
   return items.map(word => {
-    console.log(word);
+    // console.log(word);
     return <p>Hello</p>
   })
 }
