@@ -10,7 +10,7 @@ function main(responses) {
 }
 
 run(main, {
-  DOM: makeDOMDriver('#app')
+  DOM: makeDOMDriver('.minefield')
 });
 
 

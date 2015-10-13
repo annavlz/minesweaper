@@ -2,32 +2,24 @@
 
 import {Rx} from '@cycle/core'
 import {hJSX} from '@cycle/dom'
+import minefield from './minefield'
 
 function intent(DOM) {
-  console.log('intent');
-  return Rx.Observable.fromEvent(document, 'click')
+  const newGameClick$ = Rx.Observable.fromEvent(newgame, 'click')
+  return newGameClick$
 }
 
 function model(actions) {
-  console.log('model')
-  const word$ = actions.map(ev => {
-    console.log("click", ev.srcElement.id)
-    return ev
-    })
-  return word$
+  return actions.map(click => console.log('click'))
 }
 
 function view(items) {
-  console.log("view")
-  return items.map(word => {
-    // console.log(word);
-    return <p>Hello</p>
-  })
+
 }
 
 function app (sources) {
   return console.log('app'),{
-    DOM: view(model(intent(sources.DOM)))
+    DOM: model(intent(sources.DOM))
   }
 }
 

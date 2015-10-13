@@ -2,6 +2,8 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
     <link rel="stylesheet" href="./styles/main.css">
     <title>MineSweeper</title>
@@ -16,8 +18,8 @@
     <div class="outer-board">
       <div class="outer-board-border">
         <div id="mines-number">Mines: 0</div>
-        <div class="new-game">New Game</div>
-        <div class="field-border">
+        <div id="newgame" class="new-game">New Game</div>
+        <div class="minefield">
           <div id="id1" class="cell"></div>
           <div id="id2" class="cell"></div>
           <div id="id3" class="cell"></div>
