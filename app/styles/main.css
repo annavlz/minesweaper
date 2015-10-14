@@ -24,6 +24,9 @@
   height: 256px;
   background-color: #DCE0E5;
   border: 1px solid #8a8f96;
+  text-align: center;
+  font-size: 20;
+  color: green
 }
 
 .cell {
@@ -33,7 +36,9 @@
   float: left;
   visibility: visible;
 }
-
+.center {
+  vertical-align: middle;
+}
 #mines-number {
   float: left;
   margin-left: 5px;

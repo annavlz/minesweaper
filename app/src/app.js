@@ -12,22 +12,20 @@ function intent(DOM) {
 }
 
 function model(actions) {
-  return actions.map(click => {
+  const board$ = actions.concatMap(click => {
     const game = minefield(8)
     return game.map(cell => {
-      // console.log('cell', cell);
       return cell})
   })
+  return board$
 }
 
 function view(items) {
-  return items.map(board => {
-    board.map(cell => {
-      console.log('cell', cell.val, cell.posX, cell.posY)
-      let id = String(cell.posX)+String(cell.posY)
-      return h('div.cell', [String(cell.val)])
-      // return <div className="cell">Hello</div>
-    })
+  return items.map(cell => {
+    console.log('cell', cell)
+    let id = String(cell.posX)+String(cell.posY)
+    // return h('div.cell', [String(cell.val)])
+    return <div className="cell">{cell.val}</div>
   })
 }
 
