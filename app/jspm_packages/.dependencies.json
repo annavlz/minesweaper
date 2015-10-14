@@ -154,5 +154,12 @@
     "@cycle/core": "npm:@cycle/core@^3.0.0",
     "process": "github:jspm/nodelibs-process@^0.1.0"
   },
-  "npm:events@1.0.2": {}
+  "npm:events@1.0.2": {},
+  "npm:rx-combine-latest-obj@1.0.2": {
+    "rx": "npm:rx"
+  },
+  "npm:rx@4.0.6": {
+    "process": "github:jspm/nodelibs-process@^0.1.0",
+    "util": "github:jspm/nodelibs-util@^0.1.0"
+  }
 }

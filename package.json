@@ -23,7 +23,8 @@
     },
     "dependencies": {
       "@cycle/core": "npm:@cycle/core@^3.1.0",
-      "@cycle/dom": "npm:@cycle/dom@^5.3.1"
+      "@cycle/dom": "npm:@cycle/dom@^5.3.1",
+      "rx-combine-latest-obj": "npm:rx-combine-latest-obj@^1.0.2"
     },
     "devDependencies": {
       "babel": "npm:babel-core@^5.8.24",

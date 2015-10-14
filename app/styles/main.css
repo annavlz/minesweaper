@@ -29,13 +29,13 @@
   color: green
 }
 
-.cell {
+/*.cell {
   width: 30px;
   height: 30px;
   border: 1px solid #8a8f96;
   float: left;
   visibility: visible;
-}
+}*/
 .center {
   vertical-align: middle;
 }
