@@ -12,15 +12,26 @@ function intent(DOM) {
 }
 
 function model(actions) {
-  const board$ = actions.concatMap(click => {
-    const game = minefield(8)
-    return game.map(cell => {
-      return cell})
+  // const board$ = actions.concatMap(click => {
+  //   const game = minefield(8)
+  //   return game.map(cell => {
+  //     return cell})
+  // })
+  // return board$
+  const addItemMod$ = actions.map(click => {
+    let game = minefield(8)
+    let newItems = []
+    game.map(cell => { newItems.push(cell) })
+    return function (listItems) {
+      return listItems.concat(newItems)
+    }
   })
-  return board$
+  return Rx.Observable.merge(addItemMod$)
+    .scan((listItems, modification) => modification(listItems))
 }
 
 function view(items) {
+  console.log('items', items);
   return items.map(cell => {
     console.log('cell', cell)
     let id = String(cell.posX)+String(cell.posY)
