@@ -9,7 +9,7 @@ function intent(DOM) {
   console.log('intent');
   const newGameClick$ = Rx.Observable
   .fromEvent(newgame, 'click')
-  .startWith(true)
+  // .startWith(true)
   return newGameClick$
 }
 
@@ -23,6 +23,9 @@ function model(actions, itemFn) {
   }
 
   const initialState = []
+  minefield(8).map(cell => {
+    initialState.push(createCell({val: cell.val}))
+  })
 
   const addItemMod$ = actions.map(click => {
     let game = minefield(8)
